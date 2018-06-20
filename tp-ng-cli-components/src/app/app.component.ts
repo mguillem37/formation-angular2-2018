@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Bonjour Matthieu';
+
+  public onClick = (event:MouseEvent, name:string) => {
+    console.log("onClick ! " + name +  " / " + event.clientX + " / " + event.clientY )
+  }
 }

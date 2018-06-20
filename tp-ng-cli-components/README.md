@@ -3,7 +3,6 @@
 ## Création du projet
 
 - npm install -g @angular/cli
-- ng --version
 - ng new tp-ng-cli-components
 
 ## Exécution du projet
@@ -11,6 +10,7 @@
 - ng server  ou npm start (cf fichier package.json)
 - ou ng server --host 0.0.0.0 pour tests mobile
 
+- ng --version
 ## TpNgCliComponents
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.

@@ -1,5 +1,9 @@
 
   <h1>
-    {{ title }}!
+    {{ title }} !
   </h1>
+  <p [textContent]=title></p>
+  <input type="text" #name>
+  {{name.value}}
+  <button (click)="onClick($event, name.value)">click here !</button>
 
