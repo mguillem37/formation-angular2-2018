@@ -2,8 +2,25 @@
   <h1>
     {{ title }} !
   </h1>
-  <p [textContent]=title></p>
-  <input type="text" #name>
+  <p [textContent]="title"></p>
+   <input type="text" #name>
   {{name.value}}
   <button (click)="onClick($event, name.value)">click here !</button>
+<hr>
+
+  <br>
+
+  <label>Firstname : </label><input type="text" #firstname>
+  <br>
+  <label>Lasttname : </label><input type="text" #lastname>
+  <br>
+  <button (click)="addUser(firstname.value, lastname.value)">Add new user !</button>
+  <hr>
+  <br>
+  <div *ngIf="users.length===0">
+    Pas d'utilisateur connu !
+  </div>
+  <div *ngFor="let user of users; let i = index">
+      {{i}} {{user.firstname}} {{user.lastname}}
+  </div>
 
