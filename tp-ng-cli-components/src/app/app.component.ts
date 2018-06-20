@@ -28,6 +28,9 @@ export class AppComponent {
     //console.log(this.users)
   } 
 
+  public clearUsers = () => {
+    this.usersService.clear()
+  }
 
   public deleteUser = (anUser:User) => {
     this.usersService.removeUser(anUser)

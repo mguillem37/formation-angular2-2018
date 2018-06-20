@@ -14,6 +14,10 @@ export class UsersService {
   constructor() { }
 
 
+  public clear = () => {
+    this.users.length=0
+  }
+  
   public storeUser = (user:User) => {
     this.users.push(user)
     console.log("User added > " + user.lastname)

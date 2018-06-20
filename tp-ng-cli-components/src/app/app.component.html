@@ -14,7 +14,7 @@
   <br>
   <label>Lasttname : </label><input type="text" #lastname>
   <br>
-  <button (click)="addUser(firstname.value, lastname.value)">Add new user !</button>
+  <button (click)="addUser(firstname.value, lastname.value)">Add new user !</button><button (click)="clearUsers()">Clear All !</button>
   <hr>
   <br>
   <div *ngIf="users.length===0">
