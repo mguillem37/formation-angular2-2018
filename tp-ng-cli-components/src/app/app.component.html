@@ -20,7 +20,9 @@
   <div *ngIf="users.length===0">
     Pas d'utilisateur connu !
   </div>
+  
   <div *ngFor="let user of users; let i = index">
-      {{i}} {{user.firstname}} {{user.lastname}}
+      <!-- {{i}} {{user.firstname}} {{user.lastname}} -->
+      <app-user [anUser]="user" [anIndex]="i"></app-user>
   </div>
 
