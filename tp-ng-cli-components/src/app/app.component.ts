@@ -10,10 +10,12 @@ import { User } from './models/user';
 export class AppComponent {
   title = 'Bonjour Matthieu';
   private username: string = 'Matthieu'
-  private users: object[] =[]
+  //private users: object[] =[]
   // private users:new Array<User>()
+  public users;
 
   constructor(private usersService:UsersService) {
+    this.users = this.usersService.users
   }
   
   public onClick = (event:MouseEvent, name:string) => {
@@ -21,8 +23,13 @@ export class AppComponent {
   }
 
   public addUser = (lastname:string, firstname:string) => {
-    this.users.push({"firstname": firstname, "lastname": lastname})
+    //this.users.push({"firstname": firstname, "lastname": lastname})
     this.usersService.storeUser(new User(lastname, firstname))
-    console.log(this.users)
+    //console.log(this.users)
   } 
+
+
+  public deleteUser = (anUser:User) => {
+    this.usersService.removeUser(anUser)
+  }
 }

@@ -8,7 +8,7 @@ import { User } from '../models/user';
 })
 export class UsersService {
 
-  private users:Array<User> = new Array<User>();
+  public users:Array<User> = new Array<User>();
 
 
   constructor() { }
@@ -18,5 +18,11 @@ export class UsersService {
     this.users.push(user)
     console.log("User added > " + user.lastname)
   } 
+
+  public removeUser = (user:User) => {
+    console.log("User à supprimer : " + user.lastname)
+    const index = this.users.findIndex(u=>u.lastname===user.lastname)
+    this.users.splice(index, 1)
+  }
 
 }

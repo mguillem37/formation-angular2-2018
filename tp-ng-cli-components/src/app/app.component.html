@@ -23,6 +23,6 @@
   
   <div *ngFor="let user of users; let i = index">
       <!-- {{i}} {{user.firstname}} {{user.lastname}} -->
-      <app-user [anUser]="user" [anIndex]="i"></app-user>
+      <app-user [anUser]="user" [anIndex]="i"></app-user>  <button (click)="deleteUser(user)">Delete this user !</button>
   </div>
 
