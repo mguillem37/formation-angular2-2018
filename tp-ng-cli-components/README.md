@@ -11,6 +11,12 @@
 - ou ng server --host 0.0.0.0 pour tests mobile
 
 - ng --version
+
+## Création d'un service
+
+`ng generate service services/Users`
+
+
 ## TpNgCliComponents
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.

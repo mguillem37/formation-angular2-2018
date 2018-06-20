@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { UsersService } from './services/users.service';
+import { User } from './models/user';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +13,8 @@ export class AppComponent {
   private users: object[] =[]
   // private users:new Array<User>()
 
+  constructor(private usersService:UsersService) {
+  }
   
   public onClick = (event:MouseEvent, name:string) => {
     console.log("onClick ! " + name +  " / " + event.clientX + " / " + event.clientY )
@@ -18,6 +22,7 @@ export class AppComponent {
 
   public addUser = (lastname:string, firstname:string) => {
     this.users.push({"firstname": firstname, "lastname": lastname})
+    this.usersService.storeUser(new User(lastname, firstname))
     console.log(this.users)
   } 
 }
