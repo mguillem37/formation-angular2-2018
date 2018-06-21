@@ -29,10 +29,12 @@ export class HighlightDirective {
 
   private startHihglight() {
     this.el.nativeElement.style.backgroundColor = this.color
+    this.el.nativeElement.style.color = 'white'
   }
 
   private stopHihglight() {
     this.el.nativeElement.style.backgroundColor = 'white'
+    this.el.nativeElement.style.color='black'
   }
 
 }
