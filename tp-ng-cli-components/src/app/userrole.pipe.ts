@@ -6,13 +6,13 @@ import { User } from './models/user';
 })
 export class UserrolePipe implements PipeTransform {
 
-  transform(users: Array<User> , filtername?:string): Array<User> {
+  transform(users: Array<User> , filtername?: string): Array<User> {
 
-      console.log("Filtername : " + filtername.toLowerCase())
-      if (!filtername || filtername == '') {
-        return users
+      console.log('Filtername : ' + filtername.toLowerCase());
+      if (!filtername || filtername === '') {
+        return users;
       }
-      return users.filter(u => u.firstname.toLowerCase() === filtername.toLowerCase())
+      return users.filter(u => u.firstname.toLowerCase() === filtername.toLowerCase());
 
   }
 

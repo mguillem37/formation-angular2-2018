@@ -3,8 +3,8 @@
 ## Création du projet
 
 - npm install -g @angular/cli
+- npm install --save rxjs-compat //pour rxjs
 - ng new tp-ng-cli-components
-- npm install --save rxjs-compat
 
 ## Exécution du projet
 
