@@ -9,6 +9,9 @@ import { HighlightDirective } from './directives/highlight.directive';
 import { UserFormByTemplateComponent } from './forms/user-form-by-template/user-form-by-template.component';
 import { UserFormByCodeComponent } from './forms/user-form-by-code/user-form-by-code.component';
 import { HttpModule } from '@angular/http';
+import { RouterModule } from '@angular/router';
+import { ROUTES } from './app.routes';
+import { CoucouComponent } from './component/coucou/coucou.component';
 
 
 @NgModule({
@@ -19,13 +22,15 @@ import { HttpModule } from '@angular/http';
     LogDirective,
     HighlightDirective,
     UserFormByTemplateComponent,
-    UserFormByCodeComponent
+    UserFormByCodeComponent,
+    CoucouComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(ROUTES)
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -21,7 +21,7 @@ export class UsersService {
           // récupération d'une collection d'objets JSON
           console.log(res);
           res.map(u => {
-            this.storeUser(new User(u.name.split(' ')[0], u.name.split(' ')[1]))
+            this.storeUser(new User(u.name.split(' ')[0], u.name.split(' ')[1]));
           });
       });
   }
