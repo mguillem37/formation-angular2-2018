@@ -4,6 +4,7 @@
 
 - npm install -g @angular/cli
 - ng new tp-ng-cli-components
+- npm install --save rxjs-compat
 
 ## Exécution du projet
 

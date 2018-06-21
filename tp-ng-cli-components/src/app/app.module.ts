@@ -8,6 +8,8 @@ import { LogDirective } from './directives/log.directive';
 import { HighlightDirective } from './directives/highlight.directive';
 import { UserFormByTemplateComponent } from './forms/user-form-by-template/user-form-by-template.component';
 import { UserFormByCodeComponent } from './forms/user-form-by-code/user-form-by-code.component';
+import { HttpModule } from '@angular/http';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { UserFormByCodeComponent } from './forms/user-form-by-code/user-form-by-
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
