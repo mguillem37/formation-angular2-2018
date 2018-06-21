@@ -21,8 +21,12 @@
     Pas d'utilisateur connu !
   </div>
   
-  <div *ngFor="let user of users; let i = index">
+  <label>filter firstname : </label><input type="text" #firstnameFilter>
+  <button (click)="setFilter(firstnameFilter.value)">Filtre!</button>
+  <!-- éviter les valeurs hardcodées au niveau des pipes !!!-->
+  <div *ngFor="let user of users | userrole:firstnameValueFilter; let i = index">
       <!-- {{i}} {{user.firstname}} {{user.lastname}} -->
-      <app-user [anUser]="user" [anIndex]="i"></app-user>  <button (click)="deleteUser(user)">Delete this user !</button>
+      <app-user [anUser]="user" [anIndex]="i" (userSelected)="deleteUser(user)" appHighlight [color]="'green'" appLog [logText]="'log'"></app-user>  
+      <!-- <button (click)="deleteUser(user)">Delete this user !</button> -->
   </div>
 

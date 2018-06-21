@@ -13,6 +13,7 @@ export class AppComponent {
   //private users: object[] =[]
   // private users:new Array<User>()
   public users;
+  public firstnameValueFilter:string = ""
 
   constructor(private usersService:UsersService) {
     this.users = this.usersService.users
@@ -22,11 +23,15 @@ export class AppComponent {
     console.log("onClick ! " + name +  " / " + event.clientX + " / " + event.clientY )
   }
 
-  public addUser = (lastname:string, firstname:string) => {
+  public addUser = (firstname:string, lastname:string) => {
     //this.users.push({"firstname": firstname, "lastname": lastname})
     this.usersService.storeUser(new User(lastname, firstname))
     //console.log(this.users)
   } 
+
+  public setFilter = (filterValue : string) => {
+    this.firstnameValueFilter = filterValue
+  }
 
   public clearUsers = () => {
     this.usersService.clear()

@@ -17,7 +17,7 @@ export class UsersService {
   public clear = () => {
     this.users.length=0
   }
-  
+
   public storeUser = (user:User) => {
     this.users.push(user)
     console.log("User added > " + user.lastname)
@@ -25,7 +25,7 @@ export class UsersService {
 
   public removeUser = (user:User) => {
     console.log("User à supprimer : " + user.lastname)
-    const index = this.users.findIndex(u=>u.lastname===user.lastname)
+    const index = this.users.findIndex(u=>u.lastname===user.lastname && u.firstname===user.firstname)
     this.users.splice(index, 1)
   }
 
