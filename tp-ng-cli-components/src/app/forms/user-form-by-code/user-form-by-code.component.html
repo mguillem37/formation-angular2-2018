@@ -1,0 +1,13 @@
+<h2>New User sample #3 code...</h2>
+
+<form (ngSubmit)="submit($event)" [formGroup]="userForm">
+  <div>
+    <label>firstname</label>
+    <input formControlName="firstname">
+  </div>
+  <div>
+    <label>lastname</label>
+    <input formControlName="lastname">
+  </div>
+  <button type="submit">Enregistrer</button><button type="submit">Reset</button>
+</form>

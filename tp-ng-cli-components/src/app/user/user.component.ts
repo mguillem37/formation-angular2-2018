@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnDestroy } from '@angular/core';
 import { User } from '../models/user';
 import { UsersService } from '../services/users.service';
 
@@ -8,21 +8,27 @@ import { UsersService } from '../services/users.service';
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css']
 })
-export class UserComponent implements OnInit {
+export class UserComponent implements OnInit, OnDestroy {
 
-  @Input() anUser:User
-  @Input() anIndex:number
+
+  @Input() anUser: User;
+  @Input() anIndex: number;
 
   @Output('userSelected')
-  selectUserEvent: EventEmitter<User> = new EventEmitter<User>()
+  userSelected: EventEmitter<User> = new EventEmitter<User>();
 
-  constructor(private usersService:UsersService) { }
+  constructor(private usersService: UsersService) { }
 
   ngOnInit() {
+    console.log('On Init');
   }
 
-  public pick(anUser:User) {
-    this.selectUserEvent.emit(anUser)
+  ngOnDestroy(): void {
+    console.log('On Destroy');
+  }
+
+  public pick(anUser: User) {
+    this.userSelected.emit(anUser);
   }
 
 

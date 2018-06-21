@@ -8,36 +8,38 @@ import { User } from './models/user';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
   title = 'Bonjour Matthieu';
-  private username: string = 'Matthieu'
-  //private users: object[] =[]
+  private username = 'Matthieu';
+
+  // private users: object[] =[]
   // private users:new Array<User>()
   public users;
-  public firstnameValueFilter:string = ""
+  public firstnameValueFilter = '';
 
-  constructor(private usersService:UsersService) {
-    this.users = this.usersService.users
-  }
-  
-  public onClick = (event:MouseEvent, name:string) => {
-    console.log("onClick ! " + name +  " / " + event.clientX + " / " + event.clientY )
+  constructor(private usersService: UsersService) {
+    this.users = this.usersService.users;
   }
 
-  public addUser = (firstname:string, lastname:string) => {
-    //this.users.push({"firstname": firstname, "lastname": lastname})
-    this.usersService.storeUser(new User(lastname, firstname))
-    //console.log(this.users)
-  } 
+  public onClick = (event: MouseEvent, name: string) => {
+    console.log('onClick ! ' + name +  ' / ' + event.clientX + ' / ' + event.clientY);
+  }
 
-  public setFilter = (filterValue : string) => {
-    this.firstnameValueFilter = filterValue
+  public addUser = (firstname: string, lastname: string) => {
+    // this.users.push({"firstname": firstname, "lastname": lastname})
+    this.usersService.storeUser(new User(lastname, firstname));
+    // console.log(this.users)
+  }
+
+  public setFilter = (filterValue: string) => {
+    this.firstnameValueFilter = filterValue;
   }
 
   public clearUsers = () => {
-    this.usersService.clear()
+    this.usersService.clear();
   }
 
-  public deleteUser = (anUser:User) => {
-    this.usersService.removeUser(anUser)
+  public deleteUser = (anUser: User) => {
+    this.usersService.removeUser(anUser);
   }
 }

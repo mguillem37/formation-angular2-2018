@@ -1,0 +1,29 @@
+
+
+<h2>New User sample #1...</h2>
+
+<form (ngSubmit)="register(userForm.value)" #userForm="ngForm">
+  <div>
+    <label>firstname</label>
+    <input type="text" name="firstname" ngModel>
+  </div>
+  <div>
+    <label>lastname</label>
+    <input type="text" name="lastname" ngModel>
+  </div>
+  <button type="submit">Enregistrer</button>
+</form>
+
+<h2>New User sample #2 two way binding...</h2>
+<form (ngSubmit)="submit()">
+  <div>
+    <label>firstname</label>
+    <input type="text" name="firstname" [(ngModel)]="user.firstname" required minlength="3">
+  </div>
+  <div>
+    <label>lastname</label>
+    <input type="text" name="lastname" [(ngModel)]="user.lastname">
+  </div>
+  <button type="submit">Enregistrer</button>
+</form>
+{{user | json}}
