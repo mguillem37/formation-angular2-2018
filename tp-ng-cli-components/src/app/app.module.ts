@@ -12,6 +12,8 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { ROUTES } from './app.routes';
 import { CoucouComponent } from './component/coucou/coucou.component';
+import { CoucouChild1Component } from './component/coucou-child1/coucou-child1.component';
+import { CoucoucChild2Component } from './component/coucouc-child2/coucouc-child2.component';
 
 
 @NgModule({
@@ -23,7 +25,9 @@ import { CoucouComponent } from './component/coucou/coucou.component';
     HighlightDirective,
     UserFormByTemplateComponent,
     UserFormByCodeComponent,
-    CoucouComponent
+    CoucouComponent,
+    CoucouChild1Component,
+    CoucoucChild2Component
   ],
   imports: [
     BrowserModule,

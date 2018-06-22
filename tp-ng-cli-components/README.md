@@ -4,6 +4,7 @@
 
 - npm install -g @angular/cli
 - npm install --save rxjs-compat //pour rxjs
+- npm install bootstrap //+ ajout déclaration angular.json et modification de l'attribut style
 - ng new tp-ng-cli-components
 
 ## Exécution du projet

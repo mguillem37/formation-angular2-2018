@@ -1,4 +1,5 @@
-<div>
+<br>
+<div style="border: solid 1px green">
   <h2>New User sample #3 code...</h2>
 
 <form (ngSubmit)="submit($event)" [formGroup]="userForm">
@@ -12,5 +13,10 @@
   </div>
   <button type="submit">Enregistrer</button><button type="submit">Reset</button>
 </form>
-<a href="" [routerLink]='["/coucou"]'>Coucou :-)</a>
+<br>
+<h3>
+    <br>vers coucou Page (contient deux children)
+    <br><a href="" [routerLink]='["/coucou/child1"]'>vers Coucou Child1 :-)</a>
+    <br><a href="" [routerLink]='["/coucou/child2"]'>vers Coucou Child2 :-)</a>
+</h3>
 </div>

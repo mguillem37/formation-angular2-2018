@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { User } from '../models/user';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
+import { HttpClient } from 'selenium-webdriver/http';
 
 // cette syntace l'injecte directement au niveau du module principal app.module.ts via la rubrique providers: []
 // injectable indique ici que cette classe peut recevoir d'autres injections - FAUX AMI
@@ -14,6 +15,7 @@ export class UsersService {
 
 
   constructor(private http: Http) {
+    // ancienne façon de procéder
     this.http
       .get('https://jsonplaceholder.typicode.com/users')
       .map( r => r.json() )
@@ -24,6 +26,14 @@ export class UsersService {
             this.storeUser(new User(u.name.split(' ')[0], u.name.split(' ')[1]));
           });
       });
+
+      /**
+       * http HttpClient
+      users = this.http.get<User[]>('url')
+      on obtient un Observable
+      du coup on peut utiliser ensuite via le pipe async dans une page html
+      users | async
+      */
   }
 
 
