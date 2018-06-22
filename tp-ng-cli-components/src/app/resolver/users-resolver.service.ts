@@ -13,7 +13,20 @@ export class UsersResolverService implements Resolve<User> {
   }
 
     resolve (route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<User> | Promise<User> | User {
-      const aUser = new User('matthieu', 'guillemette');
+      // extraction du paramètre iduser de la route
+      const idUser = route.paramMap.get('iduser');
+      console.log(`idUser : ${idUser}`);
+      let aUser;
+      switch (idUser)  {
+        case '1': {
+          aUser = new User('Matthieu', 'Guillemette');
+          break;
+        }
+        case '2': {
+          aUser = new User('Martin', 'Guillemette');
+          break;
+        }
+      }
       return aUser;
     }
 
