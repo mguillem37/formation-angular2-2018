@@ -4,6 +4,7 @@
   </h1>
   <h2 i18n>Test affichage I18N</h2> 
   <p [textContent]="title"></p>
+  <div>Locale : {{locale}} - Test I18N :  {{ 12345.67 | number }}</div>
    <input type="text" #name>
   <span style="font-weight:bold; color: green">{{name.value}}</span> 
   <button (click)="onClick($event, name.value)">click here !</button>

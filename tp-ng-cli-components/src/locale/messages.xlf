@@ -2,8 +2,8 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en" datatype="plaintext" original="ng2.template">
     <body>
-      <trans-unit id="1757059ed31cc1bcf4bf0cb877e6267885cc1caa" datatype="html">
-        <source>Test display I18N</source>
+      <trans-unit id="b831eb9b66eb9a9341c4e1a0e36a5fbc49cd9e73" datatype="html">
+        <source>Test affichage I18N</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/app.component.ts</context>
           <context context-type="linenumber">5</context>
