@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Inject, LOCALE_ID } from '@angular/core';
 import { UsersService } from './services/users.service';
 import { User } from './models/user';
 
@@ -17,8 +17,9 @@ export class AppComponent {
   public users;
   public firstnameValueFilter = '';
 
-  constructor(private usersService: UsersService) {
+  constructor(@Inject(LOCALE_ID) public locale: string, private usersService: UsersService) {
     this.users = this.usersService.users;
+    console.log(`Locale utilisée : ${locale}`);
   }
 
   public onClick = (event: MouseEvent, name: string) => {

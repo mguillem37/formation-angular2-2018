@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID} from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
@@ -14,6 +14,9 @@ import { ROUTES } from './app.routes';
 import { CoucouComponent } from './component/coucou/coucou.component';
 import { CoucouChild1Component } from './component/coucou-child1/coucou-child1.component';
 import { CoucoucChild2Component } from './component/coucouc-child2/coucouc-child2.component';
+import { CoucouModule } from './modules/coucou/coucou.module';
+
+
 
 
 @NgModule({
@@ -34,9 +37,14 @@ import { CoucoucChild2Component } from './component/coucouc-child2/coucouc-child
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    RouterModule.forRoot(ROUTES)
+    RouterModule.forRoot(ROUTES),
+    CoucouModule
   ],
-  providers: [],
+  providers: [
+    { provide: LOCALE_ID, useValue: 'fr-FR' }
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+}

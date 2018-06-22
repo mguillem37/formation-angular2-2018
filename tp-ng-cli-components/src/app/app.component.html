@@ -2,9 +2,10 @@
   <h1>
     {{ title }} !
   </h1>
+  <h2 i18n>Test affichage I18N</h2> 
   <p [textContent]="title"></p>
    <input type="text" #name>
-  {{name.value}}
+  <span style="font-weight:bold; color: green">{{name.value}}</span> 
   <button (click)="onClick($event, name.value)">click here !</button>
 <hr>
 
@@ -17,6 +18,7 @@
   <button (click)="addUser(firstname.value, lastname.value)">Add new user !</button><button (click)="clearUsers()">Clear All !</button>
   <hr>
   <br>
+
   <div *ngIf="users.length===0">
     Pas d'utilisateur connu !
   </div>

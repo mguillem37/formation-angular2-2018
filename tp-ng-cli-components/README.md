@@ -4,8 +4,10 @@
 
 - npm install -g @angular/cli
 - npm install --save rxjs-compat //pour rxjs
+- ng xi18n --output-path i18n/locale
 - npm install bootstrap //+ ajout déclaration angular.json et modification de l'attribut style
 - ng new tp-ng-cli-components
+- pour créer un composant dans un module faire un ng g c dans le répertoire du module
 
 ## Exécution du projet
 
