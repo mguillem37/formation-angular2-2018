@@ -15,7 +15,7 @@ export class UserFormByCodeComponent implements OnInit {
   lastnameCtrl: FormControl;
 
   static isFirstnameMatthieu = (control: FormControl) => {
-    return control.value === 'matthieu' ? { notMatthieu : true} : { notMatthieu : false};
+    return control.value === 'matthieu' ? null : { notMatthieu : true};
   }
   constructor(private usersService: UsersService, fb: FormBuilder) {
 
