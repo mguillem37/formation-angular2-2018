@@ -17,7 +17,8 @@ export const ROUTES: Routes = [
             // tslint:disable-next-line:max-line-length
             {path: 'child2/:iduser', component: CoucoucChild2Component, canActivate: [LoggedGuardGuard], resolve: {myUser : UsersResolverService}}
         ]
-    }
+    },
+    {path: 'module', loadChildren: './modules/coucou/coucou.module#CoucouModule'}
 ];
 
 
